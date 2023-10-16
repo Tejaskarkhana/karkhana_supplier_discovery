@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include karkhana_supplier_discovery *.css
+recursive-include karkhana_supplier_discovery *.csv
+recursive-include karkhana_supplier_discovery *.html
+recursive-include karkhana_supplier_discovery *.ico
+recursive-include karkhana_supplier_discovery *.js
+recursive-include karkhana_supplier_discovery *.json
+recursive-include karkhana_supplier_discovery *.md
+recursive-include karkhana_supplier_discovery *.png
+recursive-include karkhana_supplier_discovery *.py
+recursive-include karkhana_supplier_discovery *.svg
+recursive-include karkhana_supplier_discovery *.txt
+recursive-exclude karkhana_supplier_discovery *.pyc
