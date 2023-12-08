@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-26 14:34:45.176118",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "doc",
+  "docname",
+  "action",
+  "field",
+  "column_break_frtw5",
+  "previous",
+  "row_reference",
+  "row_index",
+  "new",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "field",
+   "fieldtype": "Data",
+   "label": "Field"
+  },
+  {
+   "fieldname": "previous",
+   "fieldtype": "Code",
+   "label": "Previous",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new",
+   "fieldtype": "Code",
+   "label": "New",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "doc",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "DocType"
+  },
+  {
+   "fieldname": "docname",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "DocName"
+  },
+  {
+   "fieldname": "action",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Action"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Pending\nApproved\nRejected",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_frtw5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "row_reference",
+   "fieldtype": "Data",
+   "label": "Row Reference",
+   "read_only": 1
+  },
+  {
+   "fieldname": "row_index",
+   "fieldtype": "Data",
+   "label": "Row Index",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-09 15:52:29.896578",
+ "modified_by": "Administrator",
+ "module": "Supplier Discovery",
+ "name": "Staging Core",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

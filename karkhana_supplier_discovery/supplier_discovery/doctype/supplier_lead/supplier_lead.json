@@ -1,0 +1,81 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "SCR-SUP-.####",
+ "creation": "2023-10-31 16:52:51.774480",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "identifiers_section",
+  "supplier_name",
+  "column_break_bx1kw",
+  "gst",
+  "email",
+  "section_break_vvdep",
+  "scraped_data"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_bx1kw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gst",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "GST",
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_vvdep",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "scraped_data",
+   "fieldtype": "Code",
+   "label": "Scraped Data"
+  },
+  {
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Supplier Name"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "identifiers_section",
+   "fieldtype": "Section Break",
+   "label": "Identifiers"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-10-31 17:06:23.027113",
+ "modified_by": "Administrator",
+ "module": "Supplier Discovery",
+ "name": "Supplier Lead",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

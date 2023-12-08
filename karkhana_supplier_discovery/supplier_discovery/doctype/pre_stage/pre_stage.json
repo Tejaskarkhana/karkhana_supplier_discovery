@@ -1,0 +1,280 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:email",
+ "creation": "2023-11-07 14:02:14.584369",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company_logo",
+  "company_name",
+  "slug",
+  "website",
+  "email",
+  "total_employees",
+  "column_break_gypqd",
+  "about_us",
+  "listing_type",
+  "scraped_data",
+  "supplier_type",
+  "company_type",
+  "annual_turnover",
+  "year_of_establishment",
+  "featured",
+  "section_break_ukmiy",
+  "address",
+  "contact",
+  "contacts_section",
+  "company_gst",
+  "export_license_registraton_number",
+  "urn",
+  "certificates",
+  "section_break_j1sce",
+  "customer_served",
+  "industry_served",
+  "industries",
+  "services_section",
+  "manufacturing_process",
+  "material_capabilities",
+  "section_break_b5wkw",
+  "finishing_capabilities",
+  "design_services",
+  "machines_section",
+  "machines",
+  "section_break_xxwtv",
+  "allowed_for_listing"
+ ],
+ "fields": [
+  {
+   "fieldname": "company_logo",
+   "fieldtype": "Attach Image",
+   "label": "Company Logo"
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
+  },
+  {
+   "fieldname": "total_employees",
+   "fieldtype": "Float",
+   "label": "Total Employees"
+  },
+  {
+   "fieldname": "column_break_gypqd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "about_us",
+   "fieldtype": "Text Editor",
+   "label": "About Us"
+  },
+  {
+   "default": "Not Onboarded",
+   "fieldname": "listing_type",
+   "fieldtype": "Select",
+   "label": "Listing Type",
+   "options": "Not Onboarded\nOnboarded\nVerified\nAudited"
+  },
+  {
+   "fieldname": "supplier_type",
+   "fieldtype": "Select",
+   "label": "Supplier Type",
+   "options": "Small\nMedium\nLarge"
+  },
+  {
+   "fieldname": "annual_turnover",
+   "fieldtype": "Data",
+   "label": "Annual Turnover"
+  },
+  {
+   "fieldname": "year_of_establishment",
+   "fieldtype": "Date",
+   "label": "Year of Establishment"
+  },
+  {
+   "fieldname": "section_break_ukmiy",
+   "fieldtype": "Section Break",
+   "label": "Address & Contact"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Table",
+   "label": "Address",
+   "options": "Supplier Master Address"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Table",
+   "label": "Contact",
+   "options": "Supplier Master Contact"
+  },
+  {
+   "fieldname": "contacts_section",
+   "fieldtype": "Section Break",
+   "label": "Registration Details"
+  },
+  {
+   "fieldname": "company_gst",
+   "fieldtype": "Data",
+   "label": "Company GST"
+  },
+  {
+   "fieldname": "export_license_registraton_number",
+   "fieldtype": "Data",
+   "label": "Export License Registraton Number"
+  },
+  {
+   "fieldname": "urn",
+   "fieldtype": "Data",
+   "label": "URN"
+  },
+  {
+   "fieldname": "certificates",
+   "fieldtype": "Table",
+   "label": "Certificates",
+   "options": "Supplier Master Ceritificate"
+  },
+  {
+   "fieldname": "section_break_j1sce",
+   "fieldtype": "Section Break",
+   "label": "Additional Information"
+  },
+  {
+   "fieldname": "customer_served",
+   "fieldtype": "Table",
+   "label": "Customer Served",
+   "options": "Supplier Master Customer"
+  },
+  {
+   "fieldname": "industry_served",
+   "fieldtype": "Table",
+   "label": "Industry Served",
+   "options": "Supplier Master Industry Served"
+  },
+  {
+   "fieldname": "services_section",
+   "fieldtype": "Section Break",
+   "label": "Services"
+  },
+  {
+   "fieldname": "manufacturing_process",
+   "fieldtype": "Code",
+   "label": "Manufacturing Process"
+  },
+  {
+   "fieldname": "material_capabilities",
+   "fieldtype": "Code",
+   "label": "Material Capabilities"
+  },
+  {
+   "fieldname": "section_break_b5wkw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "finishing_capabilities",
+   "fieldtype": "Code",
+   "label": "Finishing Capabilities"
+  },
+  {
+   "fieldname": "design_services",
+   "fieldtype": "Code",
+   "label": "Design Services"
+  },
+  {
+   "fieldname": "machines_section",
+   "fieldtype": "Section Break",
+   "label": "Machines"
+  },
+  {
+   "fieldname": "machines",
+   "fieldtype": "Code",
+   "label": "Machines"
+  },
+  {
+   "fieldname": "section_break_xxwtv",
+   "fieldtype": "Section Break",
+   "label": "Listing Concent"
+  },
+  {
+   "default": "0",
+   "fieldname": "allowed_for_listing",
+   "fieldtype": "Check",
+   "label": "allowed for listing"
+  },
+  {
+   "fieldname": "scraped_data",
+   "fieldtype": "Code",
+   "label": "Scraped Data"
+  },
+  {
+   "default": "0",
+   "fieldname": "featured",
+   "fieldtype": "Check",
+   "label": "Featured"
+  },
+  {
+   "fieldname": "slug",
+   "fieldtype": "Data",
+   "label": "Slug",
+   "unique": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "unique": 1
+  },
+  {
+   "fieldname": "company_type",
+   "fieldtype": "Select",
+   "label": "Company Type",
+   "options": "Manufacturing\nOEM\nRaw Material"
+  },
+  {
+   "fieldname": "industries",
+   "fieldtype": "Code",
+   "label": "industries"
+  }
+ ],
+ "image_field": "company_logo",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-12-06 21:49:33.090134",
+ "modified_by": "Administrator",
+ "module": "Supplier Discovery",
+ "name": "Pre Stage",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "if_owner": 1,
+   "read": 1,
+   "role": "Supplier",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
