@@ -25,6 +25,7 @@ def create_supplier_master(doc,method):
     new_supplier_master_doc.allowed_for_listing= doc.allowed_for_listing
     new_supplier_master_doc.slug= doc.slug
     new_supplier_master_doc.featured= doc.featured
+    new_supplier_master_doc.supplier_uuid= doc.supplier_uuid
     for i in doc.address:
         new_supplier_master_doc.append("address",get_address(i))
     
@@ -37,8 +38,9 @@ def create_supplier_master(doc,method):
     for i in doc.customer_served:
         new_supplier_master_doc.append("customer_served",get_customer_served(i))
     
-    for i in doc.industry_served:
-        new_supplier_master_doc.append("industry_served",get_industry_served(i))
+    if doc.industry_served:
+        for i in doc.industry_served:
+            new_supplier_master_doc.append("industry_served",get_industry_served(i))
     
     new_supplier_master_doc.company_logo = doc.company_logo
 

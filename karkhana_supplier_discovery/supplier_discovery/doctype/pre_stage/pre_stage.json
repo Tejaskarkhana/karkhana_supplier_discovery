@@ -15,6 +15,8 @@
   "total_employees",
   "column_break_gypqd",
   "about_us",
+  "status",
+  "profile_percentage",
   "listing_type",
   "scraped_data",
   "supplier_type",
@@ -43,7 +45,8 @@
   "machines_section",
   "machines",
   "section_break_xxwtv",
-  "allowed_for_listing"
+  "allowed_for_listing",
+  "supplier_uuid"
  ],
  "fields": [
   {
@@ -154,9 +157,8 @@
   },
   {
    "fieldname": "industry_served",
-   "fieldtype": "Table",
-   "label": "Industry Served",
-   "options": "Supplier Master Industry Served"
+   "fieldtype": "Code",
+   "label": "Industry Served"
   },
   {
    "fieldname": "services_section",
@@ -241,12 +243,29 @@
    "fieldname": "industries",
    "fieldtype": "Code",
    "label": "industries"
+  },
+  {
+   "fieldname": "supplier_uuid",
+   "fieldtype": "Data",
+   "label": " Supplier UUID"
+  },
+  {
+   "default": "Profile Incomplete",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Profile Incomplete\nOpen For Listing\nUnder Review\nProfile Ready"
+  },
+  {
+   "fieldname": "profile_percentage",
+   "fieldtype": "Int",
+   "label": "Profile Percentage"
   }
  ],
  "image_field": "company_logo",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-06 21:49:33.090134",
+ "modified": "2023-12-11 13:06:48.460492",
  "modified_by": "Administrator",
  "module": "Supplier Discovery",
  "name": "Pre Stage",

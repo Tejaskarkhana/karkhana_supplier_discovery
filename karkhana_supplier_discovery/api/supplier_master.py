@@ -138,7 +138,7 @@ def supplier_search(*args, **kwargs):
             values.append(value)
             temp[field] = value
     query_conditions = " AND ".join(conditions) if conditions else "1 = 1"
-    query = """SELECT parent.`name`, parent.`about_us`,parent.`annual_turnover`,parent.`year_of_establishment`,parent.`total_employees`,parent.`company_gst` FROM `tabSupplier Master` AS parent LEFT JOIN `tabSupplier Master Address` AS child1 ON parent.`name` = child1.`parent` LEFT JOIN `tabSupplier Master Ceritificate` AS child2 ON parent.`name` = child2.`parent` WHERE {}""".format(query_conditions)
+    query = """SELECT parent.`name`, parent.`email`, parent.`about_us`,parent.`annual_turnover`,parent.`year_of_establishment`,parent.`total_employees`,parent.`company_gst` FROM `tabSupplier Master` AS parent LEFT JOIN `tabSupplier Master Address` AS child1 ON parent.`name` = child1.`parent` LEFT JOIN `tabSupplier Master Ceritificate` AS child2 ON parent.`name` = child2.`parent` WHERE {}""".format(query_conditions)
     # return query
     result = frappe.db.sql(query, debug = 1,as_dict=True)
     return generate_response('green','Supplier list returned',result )
@@ -243,4 +243,38 @@ def test(*args, **kwargs):
 
 
 
+@frappe.whitelist()
+@log
+def supplier_search2(*args, **kwargs):
+    parent_filter = {}
+    parent_or_filter = {}
+    result = []        
+    json_data = kwargs
+    city = json_data.get("city")
+    address_filter = {}
+    if city:
+        address_filter["city"] = city
+    parent_doc_list = frappe.get_all("Supplier Master Address",filters=address_filter,fields=["parent"])
 
+    if len(parent_doc_list) > 0:
+        parent_filter["name"] = ["in",[i["parent"] for i in parent_doc_list]]
+    
+    if json_data.get("search_term"):
+        parent_or_filter["manufacturing_process"] = ["like",f"%{json_data.get('search_term')}%"]
+        parent_or_filter["material_capabilities"] = ["like", f"%{json_data.get('search_term')}%"]
+        parent_or_filter["finishing_capabilities"] = ["like", f"%{json_data.get('search_term')}%"]
+        parent_or_filter["design_services"] = ["like", f"%{json_data.get('search_term')}%"]
+        parent_or_filter["machines"] = ["like", f"%{json_data.get('search_term')}%"]
+    
+    if json_data.get("services_options"):
+        parent_or_filter["manufacturing_process"] = ["like"] + [f"%{i}%" for i in json_data.get("services_options",[])]
+        parent_or_filter["material_capabilities"] = ["like"] + [f"%{i}%" for i in json_data.get("services_options",[])]
+        parent_or_filter["finishing_capabilities"] = ["like"] + [f"%{i}%" for i in json_data.get("services_options",[])]
+        parent_or_filter["design_services"] = ["like"] + [f"%{i}%" for i in json_data.get("services_options",[])]
+        parent_or_filter["machines"] = ["like"] + [f"%{i}%" for i in json_data.get("services_options",[])]
+    result = frappe.get_all("Supplier Master",filters=parent_filter,or_filters=parent_or_filter,fields=["name","about_us",
+                                                                    "annual_turnover",
+                                                                    "total_employees",
+                                                                    "year_of_establishment",
+                                                                    "company_gst"])
+    return generate_response('green','Supplier list returned',result )

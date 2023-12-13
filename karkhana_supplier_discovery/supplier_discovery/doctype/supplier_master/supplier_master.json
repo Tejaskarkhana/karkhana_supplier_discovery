@@ -43,7 +43,8 @@
   "machines",
   "section_break_xxwtv",
   "allowed_for_listing",
-  "uuid"
+  "uuid",
+  "supplier_uuid"
  ],
  "fields": [
   {
@@ -241,12 +242,17 @@
    "fieldtype": "Select",
    "label": "Company Type",
    "options": "Manufacturing\nOEM\nRaw Material"
+  },
+  {
+   "fieldname": "supplier_uuid",
+   "fieldtype": "Data",
+   "label": "Supplier UUID"
   }
  ],
  "image_field": "company_logo",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-28 11:22:03.200710",
+ "modified": "2023-12-11 12:48:52.221988",
  "modified_by": "Administrator",
  "module": "Supplier Discovery",
  "name": "Supplier Master",

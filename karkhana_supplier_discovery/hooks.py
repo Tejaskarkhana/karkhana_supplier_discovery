@@ -95,13 +95,23 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"Version": {
+		"after_insert": "karkhana_supplier_discovery.actions.pre_staging.on_update.post_to_staging"
+	},
+	"Pre Stage":{
+		"before_insert" : "karkhana_supplier_discovery.event_handler.pre_stage.create_slug",
+		"on_update": "karkhana_supplier_discovery.actions.pre_staging.on_update.update_supplier_stage",
+		"after_insert":"karkhana_supplier_discovery.event_handler.pre_stage.create_supplier_master"
+	},
+	"Staging Core":{
+		"on_update":["karkhana_supplier_discovery.event_handler.staging_core.on_staging_core_update"
+			]
+			
+		
+
+	}
+}
 
 # Scheduled Tasks
 # ---------------
