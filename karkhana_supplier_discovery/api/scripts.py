@@ -114,7 +114,6 @@ def save_migration_results_to_excel(success_migrations, failed_migrations, file_
     # Save the Excel file
     wb.save(file_path)
 
-def test():
-    return 
+
 
 
